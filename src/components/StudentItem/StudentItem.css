@@ -1,0 +1,10 @@
+.StudentItem {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    border: 2px solid #282c34;
+    margin: 1% 25%;
+    border-radius: 5px;
+    font-size: 25px;
+    background: #61dafb;
+}
