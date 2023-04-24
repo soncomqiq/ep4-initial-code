@@ -9,8 +9,10 @@ export function StudentList(props) {
       <div className="selectdiv">
         <label>
           <select>
-            <option value="retired">Retired</option>
-            <option value="working">Working</option>
+            <option value="A">A</option>
+            <option value="B">B</option>
+            <option value="O">O</option>
+            <option value="AB">AB</option>
           </select>
         </label>
       </div>
