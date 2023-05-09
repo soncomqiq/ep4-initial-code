@@ -6,13 +6,16 @@ export function StudentList(props) {
   const studentList = props.studentList;
   const [curBType, setCurBType] = useState("A");
 
-  const filteredStudends = studentList.filter(e => e.bType === curBType);
+  const filteredStudents = studentList.filter((e) => e.bType === curBType);
 
   return (
     <>
       <div className="selectdiv">
         <label>
-          <select value={curBType} onChange={e => setCurBType(e.target.value)}>
+          <select
+            value={curBType}
+            onChange={(e) => setCurBType(e.target.value)}
+          >
             <option value="A">A</option>
             <option value="B">B</option>
             <option value="O">O</option>
@@ -21,15 +24,19 @@ export function StudentList(props) {
         </label>
       </div>
       <div>
-        {filteredStudends.map((e) => (
-          <StudentItem
-            key={e.id}
-            name={e.name}
-            surname={e.surname}
-            age={e.age}
-            bType={e.bType}
-          />
-        ))}
+        {filteredStudents.length === 0 ? (
+          <div>Not found</div>
+        ) : (
+          filteredStudents.map((e) => (
+            <StudentItem
+              key={e.id}
+              name={e.name}
+              surname={e.surname}
+              age={e.age}
+              bType={e.bType}
+            />
+          ))
+        )}
       </div>
     </>
   );
