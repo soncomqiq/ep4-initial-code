@@ -5,14 +5,16 @@ import StudentList from "./components/StudentList/StudentList";
 
 let lastId = 4;
 
+const INITIAL_STUDENTS = [
+  { id: 1, name: "Samuel", surname: "Jackson", age: 73, bType: "O" },
+  { id: 2, name: "Keanu", surname: "Reeves", age: 58, bType: "A" },
+  { id: 3, name: "Tom", surname: "Cruise", age: 60, bType: "AB" },
+  { id: 4, name: "Johnny", surname: "Depp", age: 59, bType: "A" },
+];
+
 function App() {
-  const studentList = [
-    { id: 1, name: "Samuel", surname: "Jackson", age: 73, bType: "O" },
-    { id: 2, name: "Keanu", surname: "Reeves", age: 58, bType: "A" },
-    { id: 3, name: "Tom", surname: "Cruise", age: 60, bType: "AB" },
-    { id: 4, name: "Johnny", surname: "Depp", age: 59, bType: "A" },
-  ];
   const [status, setStatus] = useState("Available");
+  const [studentList, setStudentList] = useState(INITIAL_STUDENTS);
 
   const clickEventHandler = () => {
     setStatus("Busy");
@@ -24,14 +26,14 @@ function App() {
       ...newStudentData,
       id: ++lastId,
     };
-    console.log(newStudent);
+    setStudentList([newStudent, ...studentList]);
   };
 
   return (
     <div className="App">
       <NewStudentItem onAddStudent={addStudentHandler} />
-      <hr/>
-      <StudentList studentList={studentList}/>
+      <hr />
+      <StudentList studentList={studentList} />
       <h3>Status: {status}</h3>
       <button onClick={clickEventHandler}>Click me</button>
     </div>
