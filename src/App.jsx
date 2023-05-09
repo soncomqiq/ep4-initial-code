@@ -10,7 +10,7 @@ function App() {
     { id: 1, name: "Samuel", surname: "Jackson", age: 73, bType: "O" },
     { id: 2, name: "Keanu", surname: "Reeves", age: 58, bType: "A" },
     { id: 3, name: "Tom", surname: "Cruise", age: 60, bType: "AB" },
-    { id: 4, name: "Johnny", surname: "Depp", age: 59, bType: "B" },
+    { id: 4, name: "Johnny", surname: "Depp", age: 59, bType: "A" },
   ];
   const [status, setStatus] = useState("Available");
 
