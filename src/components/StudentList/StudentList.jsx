@@ -19,6 +19,7 @@ export function StudentList(props) {
       <div>
         {studentList.map((e) => (
           <StudentItem
+            key={e.id}
             name={e.name}
             surname={e.surname}
             age={e.age}
