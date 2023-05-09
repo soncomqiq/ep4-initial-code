@@ -24,19 +24,16 @@ export function StudentList(props) {
         </label>
       </div>
       <div>
-        {filteredStudents.length === 0 ? (
-          <div>Not found</div>
-        ) : (
-          filteredStudents.map((e) => (
-            <StudentItem
-              key={e.id}
-              name={e.name}
-              surname={e.surname}
-              age={e.age}
-              bType={e.bType}
-            />
-          ))
-        )}
+        {filteredStudents.length === 0 && <div>Not found</div>}
+        {filteredStudents.map((e) => (
+          <StudentItem
+            key={e.id}
+            name={e.name}
+            surname={e.surname}
+            age={e.age}
+            bType={e.bType}
+          />
+        ))}
       </div>
     </>
   );
