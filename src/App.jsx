@@ -3,6 +3,8 @@ import "./App.css";
 import NewStudentItem from "./components/NewStudentItem/NewStudentItem";
 import StudentList from "./components/StudentList/StudentList";
 
+let lastId = 4;
+
 function App() {
   const studentList = [
     { id: 1, name: "Samuel", surname: "Jackson", age: 73, bType: "O" },
@@ -20,7 +22,7 @@ function App() {
   const addStudentHandler = (newStudentData) => {
     const newStudent = {
       ...newStudentData,
-      id: Math.random().toString(),
+      id: ++lastId,
     };
     console.log(newStudent);
   };
