@@ -8,6 +8,20 @@ export function StudentList(props) {
 
   const filteredStudents = studentList.filter((e) => e.bType === curBType);
 
+  let filteredContent = <div>Not found</div>;
+
+  if (filteredStudents.length > 0) {
+    filteredContent = filteredStudents.map((e) => (
+      <StudentItem
+        key={e.id}
+        name={e.name}
+        surname={e.surname}
+        age={e.age}
+        bType={e.bType}
+      />
+    ));
+  }
+
   return (
     <>
       <div className="selectdiv">
@@ -23,18 +37,7 @@ export function StudentList(props) {
           </select>
         </label>
       </div>
-      <div>
-        {filteredStudents.length === 0 && <div>Not found</div>}
-        {filteredStudents.map((e) => (
-          <StudentItem
-            key={e.id}
-            name={e.name}
-            surname={e.surname}
-            age={e.age}
-            bType={e.bType}
-          />
-        ))}
-      </div>
+      <div>{filteredContent}</div>
     </>
   );
 }
