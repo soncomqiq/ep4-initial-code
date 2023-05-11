@@ -11,6 +11,7 @@ function StudentItem(props) {
         <div>{age}</div>
         <StudentTags age={age}/>
         <div>{props.bType}</div>
+        <button className="btn btn-danger">Cancel</button>
       </div>
   )
 }
