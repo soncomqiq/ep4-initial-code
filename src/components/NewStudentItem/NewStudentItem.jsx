@@ -74,9 +74,10 @@ const NewStudentItem = (props) => {
             <option value="AB">AB</option>
           </select>
         </div>
-      </div>
-      <div className="SubmitButton">
-        <button type="submit">Add Student</button>
+        <hr />
+        <div className="SubmitButton">
+          <button type="submit">Add Student</button>
+        </div>
       </div>
     </form>
   );
