@@ -30,15 +30,25 @@ function App() {
     setStudentList([newStudent, ...studentList]);
   };
 
+  const deleteHandler = (id) => {
+    const newStudentList = studentList.filter((e) => e.id !== id);
+    setStudentList(newStudentList);
+  };
+
   return (
     <div className="App">
-      {isShow ? <NewStudentItem setIsShow={setIsShow} onAddStudent={addStudentHandler} /> :
+      {isShow ? (
+        <NewStudentItem
+          setIsShow={setIsShow}
+          onAddStudent={addStudentHandler}
+        />
+      ) : (
         <div className="add-button-container">
           <button onClick={() => setIsShow(true)}>Add New Student</button>
         </div>
-      }
+      )}
       <hr />
-      <StudentList studentList={studentList} />
+      <StudentList deleteHandler={deleteHandler} studentList={studentList} />
       <h3>Status: {status}</h3>
       <button onClick={clickEventHandler}>Click me</button>
     </div>
