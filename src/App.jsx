@@ -15,6 +15,7 @@ const INITIAL_STUDENTS = [
 function App() {
   const [status, setStatus] = useState("Available");
   const [studentList, setStudentList] = useState(INITIAL_STUDENTS);
+  const [isShow, setIsShow] = useState(false);
 
   const clickEventHandler = () => {
     setStatus("Busy");
@@ -31,7 +32,11 @@ function App() {
 
   return (
     <div className="App">
-      <NewStudentItem onAddStudent={addStudentHandler} />
+      {isShow ? <NewStudentItem setIsShow={setIsShow} onAddStudent={addStudentHandler} /> :
+        <div className="add-button-container">
+          <button onClick={() => setIsShow(true)}>Add New Student</button>
+        </div>
+      }
       <hr />
       <StudentList studentList={studentList} />
       <h3>Status: {status}</h3>

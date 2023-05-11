@@ -32,6 +32,7 @@ const NewStudentItem = (props) => {
     };
 
     props.onAddStudent(newStudent);
+    props.setIsShow(false);
 
     setCurrentName("");
     setCurrentLastName("");
@@ -77,6 +78,9 @@ const NewStudentItem = (props) => {
         <hr />
         <div className="SubmitButton">
           <button type="submit">Add Student</button>
+        </div>
+        <div className="SubmitButton">
+          <button type="button" onClick={() => props.setIsShow(false)}>Cancel</button>
         </div>
       </div>
     </form>
