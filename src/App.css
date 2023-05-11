@@ -46,10 +46,15 @@
   background: #61dafb;
   box-shadow: #096dd9;
   border-radius: 5px;
-  border: #282c34 3px solid;
+  border: #282c34 3px double;
   width: 50%;
-  height: 150px;
+  height: 250px;
   margin: auto;
   display: flex;
   justify-content: center;
+  align-items: center;
+}
+
+.add-button-container > button {
+  height: 30%;
 }
