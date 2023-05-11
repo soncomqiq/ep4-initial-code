@@ -41,3 +41,15 @@
 .read-the-docs {
   color: #888;
 }
+
+.add-button-container {
+  background: #61dafb;
+  box-shadow: #096dd9;
+  border-radius: 5px;
+  border: #282c34 3px solid;
+  width: 50%;
+  height: 150px;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+}
