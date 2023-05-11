@@ -13,6 +13,7 @@ export function StudentList(props) {
   if (filteredStudents.length > 0) {
     filteredContent = filteredStudents.map((e) => (
       <StudentItem
+        editHandler={props.editHandler}
         deleteHandler={props.deleteHandler}
         id={e.id}
         key={e.id}

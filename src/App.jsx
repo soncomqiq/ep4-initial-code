@@ -35,6 +35,18 @@ function App() {
     setStudentList(newStudentList);
   };
 
+  const editHandler = (id, student) => {
+    // Clone new list
+    const newStudenList = [...studentList];
+
+    // Find and update the target student
+    const idx = studentList.findIndex((e) => e.id === id);
+    newStudenList[idx] = { ...student };
+
+    // Set state
+    setStudentList(newStudenList);
+  };
+
   return (
     <div className="App">
       {isShow ? (
@@ -48,7 +60,7 @@ function App() {
         </div>
       )}
       <hr />
-      <StudentList deleteHandler={deleteHandler} studentList={studentList} />
+      <StudentList editHandler={editHandler} deleteHandler={deleteHandler} studentList={studentList} />
       <h3>Status: {status}</h3>
       <button onClick={clickEventHandler}>Click me</button>
     </div>
